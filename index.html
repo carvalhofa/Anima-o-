@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #card {
+            transform-style: preserve-3d;
+            justify-content: center;
+            display: flex;
+            transition: all 0.5s;
+        }
+
+        .face {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        #front {
+            background-color: rgb(8, 135, 212);
+            transform: rotateY(180deg);
+        }
+
+        #back {
+            background-color: rgb(8, 56, 88);
+        }
+
+        .flip {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flip" id="card">
+        <div class="face" id="front">
+            FRONT
+        </div>
+        <div class="face" id="back">
+            BACK
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const card = document.querySelector("#card")
+    card.addEventListener("click", () => {
+        card.classList.toggle("flip")
+    })
+</script>
+
+</html>
